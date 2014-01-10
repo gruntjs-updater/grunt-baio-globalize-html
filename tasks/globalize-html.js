@@ -8,7 +8,7 @@
 
   handlebars = require("handlebars");
 
-  walk = require("./walk");
+  walk = require("../walk");
 
   mkdir = function(path) {
     if (!fs.existsSync(path)) {

@@ -1,7 +1,7 @@
 fs = require "fs"
 path = require "path"
 handlebars = require "handlebars"
-walk = require "./walk"
+walk = require "../walk"
 
 mkdir = (path) ->
   if !fs.existsSync(path)
