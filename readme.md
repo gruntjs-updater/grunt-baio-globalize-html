@@ -26,7 +26,7 @@ Globalize html files using hadlebars templates and resources, stored in .json fi
 }
 ```
 
-+ source directory - directory with globalized html files
++ source directory - directory with template html files
 + resource directory - directory with resource files (in json format)
 + dest directory - directory where globalized files placed
 
@@ -81,6 +81,12 @@ Globalize html files using hadlebars templates and resources, stored in .json fi
   grunt.loadNpmTasks('grunt-baio-globalize-html');
 
   grunt.registerTask('default', ['globalize-html']);
+```
+
+### Run
+
+```shell
+    grunt
 ```
 
 ### Output
