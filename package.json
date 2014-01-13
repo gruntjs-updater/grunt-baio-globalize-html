@@ -1,7 +1,7 @@
 {
     "name": "grunt-baio-globalize-html",
     "description": "Plugin to globalize html files, using handlebars templates and resources stored in .json files",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "homepage": "https://github.com/baio/grunt-baio-globalize-html",
     "author": {
         "name": "baio",
