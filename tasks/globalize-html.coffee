@@ -43,9 +43,11 @@ globalize = (resDir, srcDir, destDir) ->
 
       mkdir destDirPath
 
-      fs.writeFileSync destFilePath,  html, flag : 'w'
+      fs.writeFileSync destFilePath,  html
 
-#module.exports.globalize = globalize
+module.exports.globalize = globalize
+
+return
 
 module.exports = (grunt) ->
 

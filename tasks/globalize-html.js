@@ -39,15 +39,17 @@
           srcFileName = path.basename(srcFilePath);
           destFilePath = path.join(destDirPath, srcFileName);
           mkdir(destDirPath);
-          _results1.push(fs.writeFileSync(destFilePath, html, {
-            flag: 'w'
-          }));
+          _results1.push(fs.writeFileSync(destFilePath, html));
         }
         return _results1;
       })());
     }
     return _results;
   };
+
+  module.exports.globalize = globalize;
+
+  return;
 
   module.exports = function(grunt) {
     return grunt.registerMultiTask('globalize-html', 'Plugin to globalize html files, using handlebars templates and resources stored in .json files', function() {
@@ -59,3 +61,7 @@
   };
 
 }).call(this);
+
+/*
+//@ sourceMappingURL=globalize-html.map
+*/
