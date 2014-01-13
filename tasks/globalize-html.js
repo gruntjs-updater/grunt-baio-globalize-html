@@ -33,8 +33,10 @@
         for (_j = 0, _len1 = srcFilesPaths.length; _j < _len1; _j++) {
           srcFilePath = srcFilesPaths[_j];
           templateFile = fs.readFileSync(srcFilePath, 'utf8');
+          templateFile = templateFile.replace(/\${{/g, "${").replace(/}}\$/g, "}$");
           template = handlebars.compile(templateFile);
           html = template(resData);
+          html = templateFile.replace(/\${/g, "{{").replace(/}\$/g, "}}");
           destDirPath = path.join(destDir, resBaseName, path.relative(srcDir, path.dirname(srcFilePath)));
           srcFileName = path.basename(srcFilePath);
           destFilePath = path.join(destDirPath, srcFileName);
@@ -55,6 +57,8 @@
       return grunt.log.writeln('HTMLs were globalized');
     });
   };
+
+  module.exports.globalize = globalize;
 
 }).call(this);
 

@@ -29,9 +29,13 @@ globalize = (resDir, srcDir, destDir) ->
 
       templateFile = fs.readFileSync srcFilePath, 'utf8'
 
+      templateFile = templateFile.replace(/\${{/g, "${").replace(/}}\$/g, "}$")
+
       template = handlebars.compile templateFile
 
       html = template(resData)
+
+      html = templateFile.replace(/\${/g, "{{").replace(/}\$/g, "}}")
 
       destDirPath = path.join destDir, resBaseName , path.relative(srcDir, path.dirname(srcFilePath))
 
@@ -45,6 +49,7 @@ globalize = (resDir, srcDir, destDir) ->
 
       fs.writeFileSync destFilePath,  html
 
+
 module.exports = (grunt) ->
 
   grunt.registerMultiTask 'globalize-html', 'Plugin to globalize html files, using handlebars templates and resources stored in .json files', ->
@@ -54,5 +59,7 @@ module.exports = (grunt) ->
     globalize opts.resDir, opts.srcDir, opts.destDir
 
     grunt.log.writeln 'HTMLs were globalized'
+
+module.exports.globalize = globalize
 
 
