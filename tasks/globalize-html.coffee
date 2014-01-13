@@ -2,10 +2,11 @@ fs = require "fs"
 path = require "path"
 handlebars = require "handlebars"
 walk = require "../walk"
+mkdirp = require "mkdirp"
 
 mkdir = (path) ->
   if !fs.existsSync(path)
-    fs.mkdirSync(path)
+    mkdirp.sync(path)
 
 globalize = (resDir, srcDir, destDir) ->
 
