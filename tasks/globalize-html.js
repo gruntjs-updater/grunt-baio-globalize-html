@@ -47,10 +47,6 @@
     return _results;
   };
 
-  module.exports.globalize = globalize;
-
-  return;
-
   module.exports = function(grunt) {
     return grunt.registerMultiTask('globalize-html', 'Plugin to globalize html files, using handlebars templates and resources stored in .json files', function() {
       var opts;

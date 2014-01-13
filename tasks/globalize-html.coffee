@@ -45,10 +45,6 @@ globalize = (resDir, srcDir, destDir) ->
 
       fs.writeFileSync destFilePath,  html
 
-module.exports.globalize = globalize
-
-return
-
 module.exports = (grunt) ->
 
   grunt.registerMultiTask 'globalize-html', 'Plugin to globalize html files, using handlebars templates and resources stored in .json files', ->
