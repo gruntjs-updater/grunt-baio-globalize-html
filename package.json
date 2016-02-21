@@ -29,11 +29,13 @@
         "mkdirp": "~0.3.5"
     },
     "peerDependencies": {
-        "grunt": "~0.4.2",
+        "grunt": ">=0.4.0",
         "handlebars": "~1.3.0",
         "mkdirp": "~0.3.5"
     },
     "keywords": [
-        "gruntplugin", "globalization", "handlebars"
+        "gruntplugin",
+        "globalization",
+        "handlebars"
     ]
 }
